@@ -313,24 +313,34 @@ function copyResult() {
     window.setTimeout(() => { button.textContent = "复制结果摘要"; }, 1800);
   };
 
-  if (navigator.clipboard?.writeText) {
-    fallbackTimer = window.setTimeout(() => fallbackCopy(text, done), 700);
-    navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+  const failed = () => {
+    if (completed) return;
+    completed = true;
+    window.clearTimeout(fallbackTimer);
+    button.textContent = "复制失败，请重试";
+    window.setTimeout(() => { button.textContent = "复制结果摘要"; }, 1800);
+  };
+
+  if (fallbackCopy(text)) {
+    done();
+  } else if (navigator.clipboard?.writeText) {
+    fallbackTimer = window.setTimeout(failed, 1200);
+    navigator.clipboard.writeText(text).then(done).catch(failed);
   } else {
-    fallbackCopy(text, done);
+    failed();
   }
 }
 
-function fallbackCopy(text, callback) {
+function fallbackCopy(text) {
   const area = document.createElement("textarea");
   area.value = text;
   area.style.position = "fixed";
   area.style.opacity = "0";
   document.body.appendChild(area);
   area.select();
-  document.execCommand("copy");
+  const copied = document.execCommand("copy");
   area.remove();
-  callback();
+  return copied;
 }
 
 document.addEventListener("click", (event) => {
