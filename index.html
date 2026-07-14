@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="18 道具体情境题，帮你判断该先换工作、换活法，还是先恢复判断力。"
+    />
+    <title>转向之前｜你该换工作，还是换活法？</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="map-texture" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="转向之前首页">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+        <span><strong>转向之前</strong><small>TURNING POINT</small></span>
+      </a>
+      <button class="header-action" type="button" data-action="start">开始判断</button>
+    </header>
+
+    <main id="app">
+      <section class="screen home-screen is-active" id="home" aria-labelledby="hero-title">
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow"><span>LIFE ROUTE CHECK</span><span>18 个情境 · 约 4 分钟</span></p>
+            <h1 id="hero-title">
+              <span class="hero-question-prefix">你该</span>
+              <span class="hero-question-options">
+                <em>换工作</em>
+                <span class="hero-question-or">还是</span>
+                <strong>换活法？</strong>
+              </span>
+            </h1>
+            <p class="hero-lead">
+              有时问题出在工作，有时出在生活已经只剩工作。先分清真正卡住你的变量，再决定要不要离开。
+            </p>
+            <div class="hero-actions">
+              <button class="primary-button" type="button" data-action="start">
+                <span>找到我该先改的变量</span>
+                <span aria-hidden="true">→</span>
+              </button>
+              <span class="safety-note">答案只留在当前页面。这是一份自我梳理工具，不替你做职业决定。</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen quiz-screen" id="quiz" aria-labelledby="question-title">
+        <div class="quiz-shell">
+          <div class="quiz-header">
+            <button class="back-button" id="back-button" type="button" aria-label="返回上一题">←</button>
+            <div class="progress-wrap">
+              <div class="progress-meta">
+                <span id="progress-label">01 / 18</span>
+                <span id="progress-percent">6%</span>
+              </div>
+              <div class="progress-track" role="progressbar" aria-valuemin="1" aria-valuemax="18" aria-valuenow="1">
+                <span id="progress-bar"></span>
+              </div>
+            </div>
+            <button class="close-button" type="button" data-action="home" aria-label="退出测试">×</button>
+          </div>
+
+          <div class="question-layout">
+            <div class="question-route" aria-hidden="true">
+              <span class="question-route-line"></span>
+              <strong id="question-route-number">01</strong>
+              <small>YOUR ROUTE</small>
+            </div>
+            <div class="question-panel" id="question-panel">
+              <p class="question-scene" id="question-scene">一个普通的周一</p>
+              <h2 id="question-title">先把自己放进真实情境里。</h2>
+              <p class="question-hint">请选择最接近你最近一个月状态的答案</p>
+              <div class="options" id="options" role="radiogroup" aria-labelledby="question-title"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen analysis-screen" id="analysis" aria-live="polite">
+        <div class="analysis-card">
+          <div class="analysis-map" aria-hidden="true">
+            <span class="analysis-path path-a"></span>
+            <span class="analysis-path path-b"></span>
+            <span class="analysis-path path-c"></span>
+            <strong id="analysis-number">0</strong>
+          </div>
+          <p class="section-label">正在校准你的决策路线</p>
+          <h2 id="analysis-status">整理你的 18 次选择…</h2>
+          <div class="analysis-steps">
+            <span class="is-running">工作错配</span>
+            <span>生活失衡</span>
+            <span>判断透支</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen result-screen" id="result" aria-labelledby="result-title">
+        <div class="result-wrap">
+          <header class="result-header">
+            <div class="result-route-code" aria-hidden="true"><span>PRIMARY</span><strong id="route-code">A</strong></div>
+            <div class="result-heading">
+              <p class="eyebrow"><span>YOUR NEXT VARIABLE</span><span id="report-date"></span></p>
+              <p class="result-kicker">你最该先处理的变量是</p>
+              <h2 id="result-title">先看工作本身</h2>
+              <p class="result-summary" id="result-summary"></p>
+            </div>
+            <div class="result-signal"><span>最高信号</span><strong id="signal-level">0%</strong><small>非概率</small></div>
+          </header>
+
+          <div class="result-grid">
+            <article class="report-card score-card">
+              <div class="card-heading">
+                <span>三组决策信号</span>
+                <small>分数越高，越值得优先处理</small>
+              </div>
+              <div class="score-list" id="score-list"></div>
+            </article>
+
+            <article class="report-card insight-card">
+              <div class="card-heading"><span>为什么先看这里</span><small>核心观察</small></div>
+              <blockquote id="result-insight"></blockquote>
+              <p id="result-detail"></p>
+            </article>
+
+            <article class="report-card action-card">
+              <div class="card-heading"><span>接下来 7 天</span><small>先验证，再决定</small></div>
+              <ol id="action-list"></ol>
+            </article>
+
+            <article class="report-card note-card">
+              <span class="note-pin" aria-hidden="true"></span>
+              <p>路线提醒</p>
+              <strong id="result-reminder"></strong>
+              <span>先改变一个变量，再观察“想离开”的念头是否仍然成立。</span>
+            </article>
+          </div>
+
+          <div class="result-actions">
+            <button class="primary-button" type="button" data-action="restart"><span>重新判断一次</span><span>↻</span></button>
+            <button class="secondary-button" id="copy-result" type="button">复制结果摘要</button>
+          </div>
+          <p class="result-disclaimer">结果来自你的近期主观选择，百分比是归一化信号强度，不是离职概率，也不构成职业、心理或医疗建议。若身心不适持续影响生活，请优先向专业人士求助。</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
