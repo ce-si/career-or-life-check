@@ -1,141 +1,141 @@
 const dimensions = {
-  steady: { code: "UP", label: "稳定承接感", result: "更适合年上型关系", short: "年上型" },
-  spark: { code: "DOWN", label: "鲜活带动感", result: "更适合年下型关系", short: "年下型" },
-  sync: { code: "SYNC", label: "平等同频感", result: "更适合同频型关系", short: "同频型" },
+  work: { code: "A", label: "工作错配", result: "先看工作本身", short: "换工作变量" },
+  life: { code: "B", label: "生活失衡", result: "先换生活算法", short: "换活法" },
+  recovery: { code: "C", label: "判断透支", result: "先恢复判断力", short: "先恢复" },
 };
 
 const questions = [
   {
-    scene: "稳定承接感 · SIGNAL UP",
-    text: "当你被一件难事拖住时，理想伴侣的第一反应是？",
-    dimension: "steady",
-    options: ["先让我自己消化，等我开口再聊", "听我讲完，再问我需要什么", "陪我把问题拆开，一起找出口", "稳稳接住情绪，并带我找到下一步"],
+    scene: "休息充分后的周一 · 工作错配",
+    text: "如果先好好休息三天，再想到核心工作内容，你的感觉更接近？",
+    dimension: "work",
+    options: ["仍有兴趣，愿意继续做深", "有些乏味，但能找到想改善的部分", "大部分内容都不想再做", "即使状态很好，也不愿再回到这类工作"],
   },
   {
-    scene: "鲜活带动感 · SIGNAL DOWN",
-    text: "临时空出一个晚上，你更期待对方怎么安排？",
-    dimension: "spark",
-    options: ["按原计划各自休息，之后再约", "一起吃顿熟悉的饭，轻松待着", "临时提一个有趣的小活动", "拉我去做一件从没试过的新鲜事"],
+    scene: "晚上 19:06 · 生活失衡",
+    text: "忙完一天，你的私人时间通常如何开始？",
+    dimension: "life",
+    options: ["能按计划切换到自己的生活", "会再处理一会儿消息，之后能停下", "人已下班，注意力仍一直留在工作", "没有明确下班，工作随时会重新开始"],
   },
   {
-    scene: "平等同频感 · SIGNAL SYNC",
-    text: "两个人意见不合时，什么最让你安心？",
-    dimension: "sync",
-    options: ["对方尽快给出一个明确结论", "先听更有经验的一方怎么判断", "各说理由，再由更坚持的人决定", "平等讨论，直到双方都愿意承担决定"],
+    scene: "刚醒来的十分钟 · 判断透支",
+    text: "一个普通工作日醒来时，你的身体通常是什么状态？",
+    dimension: "recovery",
+    options: ["精神比较稳定，能正常开始一天", "启动得有点慢，活动后会好转", "睡过仍觉得累，要靠意志起床", "长期明显疲惫或不适，已经影响日常"],
   },
   {
-    scene: "稳定承接感 · SIGNAL UP",
-    text: "对方比你更熟悉某件事时，你最享受哪种相处？",
-    dimension: "steady",
-    options: ["各自处理，不必特别介入", "需要时给我一个简短提醒", "耐心讲清思路，让我少走弯路", "自然地带着我做，同时尊重我的节奏"],
+    scene: "把条件调好一点 · 工作错配",
+    text: "如果薪资和工作量都有改善，你还愿意留在现在的工作里吗？",
+    dimension: "work",
+    options: ["愿意，主要矛盾大概会缓解", "大概率愿意，但还有一两处想调整", "还是会犹豫，内容或环境并不适合", "仍然不愿意，根本问题不在待遇和忙碌"],
   },
   {
-    scene: "鲜活带动感 · SIGNAL DOWN",
-    text: "一段关系最有生命力的时刻，对你来说更像？",
-    dimension: "spark",
-    options: ["安静地做各自熟悉的事", "偶尔分享新发现和小惊喜", "两个人总能把普通日子玩出变化", "对方不断带来新视角，让我也想往前走"],
+    scene: "私人计划被打断 · 生活失衡",
+    text: "别人临时占用你原本留给自己的时间时，你通常会？",
+    dimension: "life",
+    options: ["判断必要性，不合适就拒绝", "偶尔配合，也会重新安排自己的时间", "先答应下来，之后独自消化不满", "几乎总是让步，自己的安排排在最后"],
   },
   {
-    scene: "平等同频感 · SIGNAL SYNC",
-    text: "关于日常相处节奏，你更看重什么？",
-    dimension: "sync",
-    options: ["有人替我们把大部分事情安排好", "各自负责擅长的部分就好", "重要安排一起商量，日常保留空间", "双方都能表达、协商，也能独立做决定"],
+    scene: "一个普通选择 · 判断透支",
+    text: "最近要做一个并不重大的决定时，你通常？",
+    dimension: "recovery",
+    options: ["能比较选项，并在合理时间决定", "需要多想一会儿，但不太影响行动", "容易反复纠结，把决定拖到最后", "只想逃开选择，希望任何人替我决定"],
   },
   {
-    scene: "稳定承接感 · SIGNAL UP",
-    text: "你情绪低落却说“没事”时，希望对方怎么做？",
-    dimension: "steady",
-    options: ["相信我说的，给我一点空间", "轻轻问一次，需要时再靠近", "看出我的状态，陪我慢慢说出来", "不逼问也不离开，让我确定有人接得住"],
+    scene: "表达专业判断 · 工作错配",
+    text: "当你提出不同意见或合理建议时，环境通常怎样回应？",
+    dimension: "work",
+    options: ["愿意讨论，也可能据此调整", "不一定采纳，但能认真听完", "经常被忽略，只能照旧执行", "表达会带来惩罚或羞辱，所以最好沉默"],
   },
   {
-    scene: "鲜活带动感 · SIGNAL DOWN",
-    text: "周末计划突然被雨打乱，你更喜欢对方？",
-    dimension: "spark",
-    options: ["取消安排，各自回到自己的节奏", "换成一个稳妥的室内选项", "马上搜新去处，把意外变成彩蛋", "兴致不减，带着我即兴创造另一种玩法"],
+    scene: "评价这一天 · 生活失衡",
+    text: "你通常用什么判断自己今天过得是否值得？",
+    dimension: "life",
+    options: ["工作、关系、感受和休息都会算进去", "主要看完成了什么，也能允许自己休息", "事情没做完就很难安心停下", "工作表现不好时，会否定整个人的价值"],
   },
   {
-    scene: "平等同频感 · SIGNAL SYNC",
-    text: "当伴侣给你建议时，哪种方式最舒服？",
-    dimension: "sync",
-    options: ["直接告诉我应该怎么做", "给出建议，最后由我判断", "先问我怎么看，再补充他的视角", "把我当成完整的合作者，一起推演选择"],
+    scene: "需要专注一小时 · 判断透支",
+    text: "最近面对一项熟悉任务，你的注意力通常能维持多久？",
+    dimension: "recovery",
+    options: ["大体能完成，中间偶尔分心", "需要刻意隔绝干扰才能继续", "频繁走神，一小时的事会拖很久", "很难理解或推进，连开始都觉得吃力"],
   },
   {
-    scene: "稳定承接感 · SIGNAL UP",
-    text: "面对关系里的未来安排，你更容易被什么打动？",
-    dimension: "steady",
-    options: ["先把眼前过好，不急着谈太远", "有大致方向，遇到变化再调整", "对方愿意提前想清风险和责任", "对方能给出可靠规划，也为我的选择留位置"],
+    scene: "能力使用率 · 工作错配",
+    text: "现在的工作，有多少机会让你使用并积累想要的能力？",
+    dimension: "work",
+    options: ["很多，正在形成长期积累", "有一些，只是比预期慢", "很少，大部分时间在重复消耗", "几乎没有，继续做只会离目标更远"],
   },
   {
-    scene: "鲜活带动感 · SIGNAL DOWN",
-    text: "你更容易被哪种约会状态打动？",
-    dimension: "spark",
-    options: ["流程舒服，不发生意外就很好", "有一两个用心准备的小细节", "对方有热情，愿意一起尝试新东西", "两个人像临时逃跑一样，笑着闯进新体验"],
+    scene: "翻开这一周 · 生活失衡",
+    text: "你的日程里，有多少时间是自己主动选择怎么使用的？",
+    dimension: "life",
+    options: ["每天都有一段明确属于自己的时间", "忙的时候会变少，但一周仍能找回来", "很少，大多被工作和责任提前占满", "几乎没有，我一直在响应别人的需要"],
   },
   {
-    scene: "平等同频感 · SIGNAL SYNC",
-    text: "当一方进入忙碌期，你觉得舒服的关系方式是？",
-    dimension: "sync",
-    options: ["另一方先接管安排，等忙完再说", "减少联系，默认彼此能够理解", "提前说清需求，一起调整相处频率", "既互相支持，也不默认任何一方必须牺牲"],
+    scene: "计划突然被打乱 · 判断透支",
+    text: "一件小事打乱安排后，你的情绪通常多久能恢复？",
+    dimension: "recovery",
+    options: ["调整一下就能继续", "会烦一阵，但不影响整天", "很容易失控或低落很久", "像最后一根稻草，整个人会立刻崩掉"],
   },
   {
-    scene: "稳定承接感 · SIGNAL UP",
-    text: "和伴侣一起进入陌生社交场合时，你更希望？",
-    dimension: "steady",
-    options: ["各自应对，结束后再会合", "对方偶尔确认我是否自在", "对方自然帮我进入话题和人群", "他稳住场面，也随时照顾我的边界"],
+    scene: "想象两年以后 · 工作错配",
+    text: "如果在相似岗位和环境里再做两年，你最真实的感受是？",
+    dimension: "work",
+    options: ["可以接受，我知道自己会积累什么", "略有担心，但能看到调整空间", "明显不甘心，怕继续停在原地", "很窒息，不愿让未来的自己还在这里"],
   },
   {
-    scene: "鲜活带动感 · SIGNAL DOWN",
-    text: "相处久了，你希望两个人怎样对抗无聊？",
-    dimension: "spark",
-    options: ["接受平淡，不必刻意制造变化", "偶尔换一家餐厅或散步路线", "定期找新兴趣，让彼此保持好奇", "不断交换新世界，让关系也跟着一起生长"],
+    scene: "工作之外的身份 · 生活失衡",
+    text: "除了工作，最近还有哪部分生活会让你觉得“这就是我”？",
+    dimension: "life",
+    options: ["有几部分，我能稳定投入", "有一部分，只是最近时间变少了", "很难想起，过去喜欢的事都停了", "几乎没有，我的身份只剩下工作"],
   },
   {
-    scene: "平等同频感 · SIGNAL SYNC",
-    text: "发生误会之后，你希望修复过程更像？",
-    dimension: "sync",
-    options: ["由更冷静的人先定下处理方式", "一方解释，另一方确认是否接受", "双方轮流说感受，再找共同方案", "不争输赢，一起还原问题并重建边界"],
+    scene: "连续两天不工作 · 判断透支",
+    text: "有机会完整休息两天后，你通常能恢复到什么程度？",
+    dimension: "recovery",
+    options: ["大体恢复，也会重新有兴趣做事", "能缓过来一半，基本状态变好", "身体停下了，疲惫和麻木仍在", "几乎没有恢复，想到工作又立刻耗尽"],
   },
   {
-    scene: "稳定承接感 · SIGNAL UP",
-    text: "对方在生活经验上比你丰富，你更期待？",
-    dimension: "steady",
-    options: ["经验归经验，不要影响我的决定", "遇到大事时提醒我可能的风险", "愿意分享方法，也允许我自己试错", "成为可靠参照，但从不把经验变成控制"],
+    scene: "尝试解决问题 · 工作错配",
+    text: "当前工作里最困扰你的问题，通过沟通和调整解决的可能性有多大？",
+    dimension: "work",
+    options: ["比较大，过去也有问题被解决", "有可能，需要更具体地推动", "很小，相同问题已经反复出现", "几乎不可能，问题来自稳定的制度或价值观"],
   },
   {
-    scene: "鲜活带动感 · SIGNAL DOWN",
-    text: "你希望两个人的聊天，更常带给你什么？",
-    dimension: "spark",
-    options: ["熟悉和放松，不需要太多变化", "一些新鲜信息和不同看法", "越聊越有能量，常常冒出新点子", "像打开另一扇窗，让我想去体验更大的世界"],
+    scene: "只调整生活变量 · 生活失衡",
+    text: "如果岗位和收入不变，只把作息与工作边界调好，你想离开的程度会？",
+    dimension: "life",
+    options: ["几乎不变，我不满的是工作本身", "会好一点，但大概仍想离开", "会明显降低，很多不满来自失去生活", "大概就不想离开了，我只是太久没按自己的方式生活"],
   },
   {
-    scene: "平等同频感 · SIGNAL SYNC",
-    text: "如果把年龄标签拿掉，你最想保留的判断标准是？",
-    dimension: "sync",
-    options: ["谁更能照顾和带领这段关系", "谁的生活阶段更适合长期安排", "我们能不能坦白协商彼此的需要", "我们是否平等、同频，也尊重各自成长"],
+    scene: "想离开的瞬间 · 判断透支",
+    text: "“我必须马上离开”的念头，最常在什么状态下出现？",
+    dimension: "recovery",
+    options: ["即使清醒稳定时，判断也没有改变", "忙累之后会更明显", "睡不好或连续高压时会非常强烈", "几乎只在耗尽或崩溃时出现，让我想立刻逃开"],
   },
 ];
 
 const reports = {
-  steady: {
-    summary: "你被“年上感”吸引的核心，可能不是年龄数字，而是关系里那种有分寸的承接：能看见情绪、愿意承担，也能在复杂时刻给出稳定参照。",
-    insight: "你想要的不是被管理，而是在不确定里仍有人稳稳站在身边。",
-    detail: "当对方能提前想一步、说到做到，并用经验帮你减少无谓消耗时，你更容易放松下来。这类需要常让年上型关系显得有吸引力，但真正重要的是成熟与尊重能否同时存在。",
-    reminder: "可靠不等于控制；真正适合你的承接，会为你的判断和成长留出位置。",
-    actions: ["观察对方的“照顾”是在回应你的需要，还是替你做主。", "留意承诺落地的稳定度，而不只听成熟好听的话。", "遇到分歧时，确认经验差是否仍允许你平等表达。"],
+  work: {
+    summary: "相对另外两组信号，你的阻力更多来自工作内容、环境或长期方向。先验证哪些问题属于这份工作，而不是把所有不适都归咎于自己不够会生活。",
+    insight: "如果休息和边界都变好，你可能还是不想留在这里。",
+    detail: "不匹配可能来自岗位内容、组织方式、成长路径或价值观。它不等于必须立刻辞职，但说明继续只优化作息，未必能触及根本问题。你需要的是一次有证据的外部比较。",
+    reminder: "换工作不是逃跑；未经验证地跳走，才容易把同一个问题带去下一站。",
+    actions: ["把不满分成“可协商”和“结构性”两列，每列只写三项具体事实。", "找两个相邻岗位，比较真实日常、能力要求和你会失去什么，不只看职位名称。", "选择一个最关键问题进行一次正式沟通，并记录对方是否给出明确行动与时间。"],
   },
-  spark: {
-    summary: "你被“年下感”吸引的核心，可能是关系里的鲜活与流动：好奇、直接、愿意试错，也能把普通日子变成两个人共同生长的新现场。",
-    insight: "你想要的不是更年轻的人，而是一段不会太快失去好奇心的关系。",
-    detail: "热情、行动力和新视角会明显点亮你。你更容易在轻快互动里打开自己，也愿意和对方一起创造体验。年下型关系可能承载这种想象，但活力仍需要责任感和稳定沟通来托住。",
-    reminder: "新鲜不等于不负责；让你心动的活力，也应该经得起日常与承诺。",
-    actions: ["观察新鲜感过去后，对方是否仍愿意处理琐事和分歧。", "分清“带来活力”和“需要你一直善后”之间的界线。", "确认你们对承诺、节奏和未来的理解是否同样具体。"],
+  life: {
+    summary: "你的工作未必需要立刻换掉，但现在的生活组织方式正在放大它的重量。节奏、边界和单一的成功标准，让工作占据了本该属于整个人生的空间。",
+    insight: "你想离开的，也许不是岗位，而是一种只剩下岗位的生活。",
+    detail: "当私人时间持续被侵占，休息带着愧疚，自我价值又只由产出来衡量，任何工作都会显得令人窒息。先把生活的主导权拿回一点，才能看清这份工作本身究竟合不合适。",
+    reminder: "换活法不是劝自己忍耐，而是先停止用同一种方式消耗自己。",
+    actions: ["圈出本周两个不可挪用的 45 分钟，只做与工作表现无关、但对你重要的事。", "写一句固定的收工提示，并在同一时间执行三天：记录进度、关闭入口、离开工作位置。", "暂停一件只是因为“别人都这样”才坚持的事，观察不做之后真正发生了什么。"],
   },
-  sync: {
-    summary: "对你来说，年龄差可能不是决定变量。真正影响舒适度的，是双方能不能平等协商、彼此保留主体性，并在相近的关系节奏里共同承担。",
-    insight: "比起谁带领谁，你更在意两个人能不能并肩把关系过明白。",
-    detail: "你会被能够说清需要、尊重边界、愿意共同决策的人吸引。年上或年下都可能适合你，前提是年龄和经验没有变成权力，而差异可以被放到桌面上坦诚讨论。",
-    reminder: "同频不是完全相同，而是差异出现时，双方仍愿意平等地理解和调整。",
-    actions: ["比较彼此的生活阶段，而不是只比较出生年份。", "观察重要决定里，双方是否拥有同等的知情与表达空间。", "确认差异出现时，你们能协商，而不是靠一方长期迁就。"],
+  recovery: {
+    summary: "现在最突出的不是去哪条路，而是身心透支正在影响你判断路线。重大决定可以稍后，恢复最基本的睡眠、专注和情绪空间应该先发生。",
+    insight: "当人已经耗尽时，每一条路看起来都像死路。",
+    detail: "疲惫不会让你的不满失效，但会让选项变少、后果变大、行动更急。先把判断力恢复到可用状态，再重新回答“要不要走”，得到的结论通常更稳定，也更能执行。",
+    reminder: "暂缓不可逆的决定，不是退缩，是先让做决定的人回来。",
+    actions: ["给自己设一个 7 天观察期：不做不可逆决定，只记录睡眠、身体不适和离开念头出现的时刻。", "本周主动删减或求助一件非必要任务，为连续两晚的基本休息腾出空间。", "如果疲惫、失眠或情绪问题持续影响生活，预约医生、心理咨询师或其他合适的专业支持。"],
   },
 };
 
@@ -150,7 +150,6 @@ const siteHeader = document.querySelector(".site-header");
 const questionPanel = document.querySelector("#question-panel");
 const backButton = document.querySelector("#back-button");
 const resultScreen = document.querySelector("#result");
-const progressTrack = document.querySelector(".progress-track");
 
 function showScreen(id) {
   screens.forEach((screen) => screen.classList.toggle("is-active", screen.id === id));
@@ -182,8 +181,7 @@ function renderQuestion(animate = false) {
   document.querySelector("#progress-label").textContent = `${String(number).padStart(2, "0")} / ${questions.length}`;
   document.querySelector("#progress-percent").textContent = `${percent}%`;
   document.querySelector("#progress-bar").style.width = `${percent}%`;
-  progressTrack.setAttribute("aria-valuenow", number);
-  progressTrack.setAttribute("aria-valuemax", questions.length);
+  document.querySelector(".progress-track").setAttribute("aria-valuenow", number);
   backButton.style.visibility = currentQuestion === 0 ? "hidden" : "visible";
 
   const options = document.querySelector("#options");
@@ -191,7 +189,7 @@ function renderQuestion(animate = false) {
     <button class="option-button${answers[currentQuestion] === index ? " is-selected" : ""}" type="button" role="radio" aria-checked="${answers[currentQuestion] === index}" data-answer="${index}">
       <span class="option-letter">${String.fromCharCode(65 + index)}</span>
       <span class="option-text">${option}</span>
-      <span class="option-arrow" aria-hidden="true">↗</span>
+      <span class="option-arrow" aria-hidden="true">→</span>
     </button>
   `).join("");
 
@@ -225,14 +223,14 @@ function selectAnswer(index, button) {
       questionPanel.dataset.locked = "false";
       runAnalysis();
     }
-  }, 260);
+  }, 280);
 }
 
-function calculateScores(answerList) {
+function getScores() {
   const totals = Object.fromEntries(dimensionOrder.map((key) => [key, 0]));
   const counts = Object.fromEntries(dimensionOrder.map((key) => [key, 0]));
   questions.forEach((question, index) => {
-    totals[question.dimension] += answerList[index] ?? 0;
+    totals[question.dimension] += answers[index] ?? 0;
     counts[question.dimension] += 1;
   });
   return Object.fromEntries(dimensionOrder.map((key) => [key, Math.round((totals[key] / (counts[key] * 3)) * 100)]));
@@ -250,7 +248,7 @@ function clearAnalysisTimers() {
 function runAnalysis() {
   clearAnalysisTimers();
   showScreen("analysis");
-  const statuses = ["整理你的 18 次选择…", "比较三组关系信号…", "生成你的关系时差报告…"];
+  const statuses = ["整理你的 18 次选择…", "比较三组决策信号…", "生成你的下一步路线…"];
   const stepNodes = [...document.querySelectorAll(".analysis-steps span")];
   const numberNode = document.querySelector("#analysis-number");
   const increment = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 20 : 2;
@@ -265,13 +263,13 @@ function runAnalysis() {
     stepNodes.forEach((node, index) => node.classList.toggle("is-running", index === step));
     if (value >= 100) {
       window.clearInterval(analysisInterval);
-      resultTimeout = window.setTimeout(renderResult, 220);
+      resultTimeout = window.setTimeout(renderResult, 240);
     }
-  }, 32);
+  }, 34);
 }
 
 function renderResult() {
-  const scores = calculateScores(answers);
+  const scores = getScores();
   const sorted = rankScores(scores);
   const [primary, primaryScore] = sorted[0];
   const report = reports[primary];
@@ -287,23 +285,22 @@ function renderResult() {
   document.querySelector("#report-date").textContent = new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
   document.querySelector("#action-list").innerHTML = report.actions.map((action) => `<li>${action}</li>`).join("");
   document.querySelector("#score-list").innerHTML = sorted.map(([key, value]) => `
-    <div class="score-column${key === primary ? " is-primary" : ""}">
-      <strong>${value}%</strong>
-      <div class="score-track"><span data-height="${value}%"></span></div>
-      <small>${dimensions[key].label}</small>
+    <div class="score-row${key === primary ? " is-primary" : ""}">
+      <div class="score-row-top"><span>${dimensions[key].label}</span><strong>${value}%</strong></div>
+      <div class="score-track"><span data-width="${value}%"></span></div>
     </div>
   `).join("");
 
   showScreen("result");
   window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
-    document.querySelectorAll(".score-track span").forEach((bar) => { bar.style.height = bar.dataset.height; });
+    document.querySelectorAll(".score-track span").forEach((bar) => { bar.style.width = bar.dataset.width; });
   }));
 }
 
 function copyResult() {
-  const scores = calculateScores(answers);
+  const scores = getScores();
   const primary = rankScores(scores)[0][0];
-  const text = `我的关系时差结果：${dimensions[primary].result}\n${reports[primary].insight}\n三组信号：${Object.entries(scores).map(([key, value]) => `${dimensions[key].label} ${value}%`).join("、")}\n结果仅用于自我观察，不是匹配概率或择偶结论。`;
+  const text = `我的路线判断：${dimensions[primary].result}\n${reports[primary].insight}\n三组信号：${Object.entries(scores).map(([key, value]) => `${dimensions[key].label} ${value}%`).join("、")}\n结果用于自我梳理，不是离职概率。`;
   const button = document.querySelector("#copy-result");
   let completed = false;
   let fallbackTimer;
@@ -361,5 +358,3 @@ backButton.addEventListener("click", () => {
 });
 
 document.querySelector("#copy-result").addEventListener("click", copyResult);
-
-globalThis.__assessmentData = { dimensions, questions, reports, calculateScores, rankScores };

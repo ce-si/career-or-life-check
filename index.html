@@ -5,85 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="18 道关系情境题，从稳定承接、鲜活带动与平等同频三组需求，看看你更适合年上、年下，还是同频型关系。"
+      content="18 道具体情境题，帮你判断该先换工作、换活法，还是先恢复判断力。"
     />
-    <title>你适合年上，还是年下？｜关系时差匹配测试</title>
+    <title>转向之前｜你该换工作，还是换活法？</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
   </head>
   <body>
-    <div class="calibration-grid" aria-hidden="true"></div>
+    <div class="map-texture" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="#" aria-label="关系时差研究所首页">
-        <span class="brand-symbol" aria-hidden="true"><i></i><b></b><i></i></span>
-        <span><strong>关系时差研究所</strong><small>RELATION OFFSET LAB</small></span>
+      <a class="brand" href="#" aria-label="转向之前首页">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+        <span><strong>转向之前</strong><small>TURNING POINT</small></span>
       </a>
-      <button class="header-action" type="button" data-action="start">开始校准 <span aria-hidden="true">↗</span></button>
+      <button class="header-action" type="button" data-action="start">开始判断</button>
     </header>
 
     <main id="app">
       <section class="screen home-screen is-active" id="home" aria-labelledby="hero-title">
-        <div class="hero-shell">
-          <aside class="hero-index" aria-hidden="true">
-            <span>RELATION</span>
-            <strong>±</strong>
-            <span>OFFSET</span>
-          </aside>
-
+        <div class="hero">
           <div class="hero-copy">
-            <p class="eyebrow"><span>18 SCENES · ABOUT 4 MIN</span><span>FOR ADULT RELATIONSHIPS</span></p>
+            <p class="eyebrow"><span>LIFE ROUTE CHECK</span><span>18 个情境 · 约 4 分钟</span></p>
             <h1 id="hero-title">
-              <span class="hero-prefix">你适合</span>
-              <span class="hero-choice hero-choice-older">年上</span>
-              <i>还是</i>
-              <span class="hero-choice hero-choice-younger">年下？</span>
+              <span class="hero-question-prefix">你该</span>
+              <span class="hero-question-options">
+                <em>换工作</em>
+                <span class="hero-question-or">还是</span>
+                <strong>换活法？</strong>
+              </span>
             </h1>
-            <p class="hero-lead">你喜欢的也许不是某个年龄，而是被稳稳接住、被鲜活带动，或被平等看见。把标签放一边，校准你真正舒服的关系节奏。</p>
+            <p class="hero-lead">
+              有时问题出在工作，有时出在生活已经只剩工作。先分清真正卡住你的变量，再决定要不要离开。
+            </p>
             <div class="hero-actions">
               <button class="primary-button" type="button" data-action="start">
-                <span>测测我的关系时差</span><span aria-hidden="true">→</span>
+                <span>找到我该先改的变量</span>
+                <span aria-hidden="true">→</span>
               </button>
-              <p>答案只留在当前页面<br />结果用于自我观察，不替你决定关系。</p>
+              <span class="safety-note">答案只留在当前页面。这是一份自我梳理工具，不替你做职业决定。</span>
             </div>
-          </div>
-
-          <div class="offset-device" aria-hidden="true">
-            <div class="device-label"><span>OLDER</span><span>YOUNGER</span></div>
-            <div class="device-track track-left"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="device-stitch"><b>不是算年龄<br />是校准需要</b></div>
-            <div class="device-track track-right"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="device-foot"><span>STABILITY</span><span>SPARK</span></div>
           </div>
         </div>
       </section>
 
       <section class="screen quiz-screen" id="quiz" aria-labelledby="question-title">
         <div class="quiz-shell">
-          <header class="quiz-header">
-            <button class="icon-button" id="back-button" type="button" aria-label="返回上一题">←</button>
+          <div class="quiz-header">
+            <button class="back-button" id="back-button" type="button" aria-label="返回上一题">←</button>
             <div class="progress-wrap">
               <div class="progress-meta">
                 <span id="progress-label">01 / 18</span>
                 <span id="progress-percent">6%</span>
               </div>
               <div class="progress-track" role="progressbar" aria-valuemin="1" aria-valuemax="18" aria-valuenow="1">
-                <span id="progress-bar"></span><i aria-hidden="true"></i>
+                <span id="progress-bar"></span>
               </div>
             </div>
-            <button class="icon-button" type="button" data-action="home" aria-label="退出测试">×</button>
-          </header>
+            <button class="close-button" type="button" data-action="home" aria-label="退出测试">×</button>
+          </div>
 
           <div class="question-layout">
-            <aside class="question-calibration" aria-hidden="true">
-              <span>SCENE</span>
+            <div class="question-route" aria-hidden="true">
+              <span class="question-route-line"></span>
               <strong id="question-route-number">01</strong>
-              <div><i></i><i></i><i></i><i></i><i></i></div>
-            </aside>
+              <small>YOUR ROUTE</small>
+            </div>
             <div class="question-panel" id="question-panel">
-              <p class="question-scene" id="question-scene">稳定承接感 · SIGNAL UP</p>
-              <h2 id="question-title">先把自己放进一个具体的关系场景里。</h2>
-              <p class="question-hint">选择最接近你真实偏好的答案，没有标准答案。</p>
+              <p class="question-scene" id="question-scene">一个普通的周一</p>
+              <h2 id="question-title">先把自己放进真实情境里。</h2>
+              <p class="question-hint">请选择最接近你最近一个月状态的答案</p>
               <div class="options" id="options" role="radiogroup" aria-labelledby="question-title"></div>
             </div>
           </div>
@@ -91,21 +82,19 @@
       </section>
 
       <section class="screen analysis-screen" id="analysis" aria-live="polite">
-        <div class="analysis-shell">
-          <div class="analysis-device" aria-hidden="true">
-            <div class="analysis-orbit orbit-left"></div>
-            <div class="analysis-orbit orbit-right"></div>
-            <span class="analysis-needle"></span>
+        <div class="analysis-card">
+          <div class="analysis-map" aria-hidden="true">
+            <span class="analysis-path path-a"></span>
+            <span class="analysis-path path-b"></span>
+            <span class="analysis-path path-c"></span>
             <strong id="analysis-number">0</strong>
           </div>
-          <div class="analysis-copy">
-            <p class="section-label">RELATION OFFSET CALIBRATION</p>
-            <h2 id="analysis-status">整理你的 18 次选择…</h2>
-            <div class="analysis-steps">
-              <span class="is-running">稳定承接</span>
-              <span>鲜活带动</span>
-              <span>平等同频</span>
-            </div>
+          <p class="section-label">正在校准你的决策路线</p>
+          <h2 id="analysis-status">整理你的 18 次选择…</h2>
+          <div class="analysis-steps">
+            <span class="is-running">工作错配</span>
+            <span>生活失衡</span>
+            <span>判断透支</span>
           </div>
         </div>
       </section>
@@ -113,45 +102,49 @@
       <section class="screen result-screen" id="result" aria-labelledby="result-title">
         <div class="result-wrap">
           <header class="result-header">
-            <div class="result-code"><span>PRIMARY SIGNAL</span><strong id="route-code">UP</strong></div>
+            <div class="result-route-code" aria-hidden="true"><span>PRIMARY</span><strong id="route-code">A</strong></div>
             <div class="result-heading">
-              <p class="eyebrow"><span>YOUR RELATION OFFSET</span><span id="report-date"></span></p>
-              <p class="result-kicker">你更舒服的关系节奏是</p>
-              <h2 id="result-title">更适合年上型关系</h2>
+              <p class="eyebrow"><span>YOUR NEXT VARIABLE</span><span id="report-date"></span></p>
+              <p class="result-kicker">你最该先处理的变量是</p>
+              <h2 id="result-title">先看工作本身</h2>
               <p class="result-summary" id="result-summary"></p>
             </div>
-            <div class="result-signal"><span>最强需求信号</span><strong id="signal-level">0%</strong><small>不是匹配概率</small></div>
+            <div class="result-signal"><span>最高信号</span><strong id="signal-level">0%</strong><small>非概率</small></div>
           </header>
 
-          <div class="result-layout">
+          <div class="result-grid">
             <article class="report-card score-card">
-              <div class="card-heading"><span>三组关系信号</span><small>归一化强度</small></div>
+              <div class="card-heading">
+                <span>三组决策信号</span>
+                <small>分数越高，越值得优先处理</small>
+              </div>
               <div class="score-list" id="score-list"></div>
             </article>
 
             <article class="report-card insight-card">
-              <div class="card-heading"><span>你真正被什么吸引</span><small>核心观察</small></div>
+              <div class="card-heading"><span>为什么先看这里</span><small>核心观察</small></div>
               <blockquote id="result-insight"></blockquote>
               <p id="result-detail"></p>
             </article>
 
             <article class="report-card action-card">
-              <div class="card-heading"><span>带进真实关系里观察</span><small>3 个提示</small></div>
+              <div class="card-heading"><span>接下来 7 天</span><small>先验证，再决定</small></div>
               <ol id="action-list"></ol>
             </article>
 
             <article class="report-card note-card">
-              <span>校准提醒</span>
+              <span class="note-pin" aria-hidden="true"></span>
+              <p>路线提醒</p>
               <strong id="result-reminder"></strong>
-              <p>年龄只是背景变量，尊重、边界、安全感和沟通方式才会真实影响一段关系。</p>
+              <span>先改变一个变量，再观察“想离开”的念头是否仍然成立。</span>
             </article>
           </div>
 
           <div class="result-actions">
-            <button class="primary-button" type="button" data-action="restart"><span>重新校准一次</span><span aria-hidden="true">↻</span></button>
+            <button class="primary-button" type="button" data-action="restart"><span>重新判断一次</span><span>↻</span></button>
             <button class="secondary-button" id="copy-result" type="button">复制结果摘要</button>
           </div>
-          <p class="result-disclaimer">本测试仅用于自我观察，不是心理测评或择偶结论。年龄不等于成熟度，任何结果都不能替代对具体关系中的尊重、边界与安全感的判断。</p>
+          <p class="result-disclaimer">结果来自你的近期主观选择，百分比是归一化信号强度，不是离职概率，也不构成职业、心理或医疗建议。若身心不适持续影响生活，请优先向专业人士求助。</p>
         </div>
       </section>
     </main>
